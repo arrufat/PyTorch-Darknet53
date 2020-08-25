@@ -16,10 +16,12 @@ def speed(model, name):
         avg_time = 0
 
         for i in range(0, 10):
+            torch.cuda.synchronize()
             t2 = time.time()
 
             model(input)
 
+            torch.cuda.synchronize()
             t3 = time.time()
 
             avg_time += t3 - t2
