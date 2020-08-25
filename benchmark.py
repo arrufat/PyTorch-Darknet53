@@ -1,8 +1,7 @@
 import time
 import torch
 import torchvision.models as models
-import torch.nn as nn
-from torch.autograd import Variable
+from os import environ
 
 from model import darknet53
 
@@ -29,16 +28,20 @@ def speed(model, name):
 
         avg_time /= 10.0
 
-        print('%10s : %f' % (name, avg_time))
+        print('%12s : %3.3f ms' % (name, avg_time * 1000))
 
 
 if __name__ == '__main__':
-    # cudnn.benchmark = True # This will make network slow ??
+    environ["CUDA_LAUNCH_BLOCKING"] = "1"
+    torch.backends.cudnn.benchmark = True
+
+    resnet50 = models.resnet50().cuda()
     resnet101 = models.resnet101().cuda()
     resnet152 = models.resnet152().cuda()
     densenet121 = models.densenet121().cuda()
     darknet = darknet53(1000).cuda()
 
+    speed(resnet50, 'resnet50')
     speed(resnet101, 'resnet101')
     speed(resnet152, 'resnet152')
     speed(densenet121, 'densenet121')
