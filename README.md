@@ -20,7 +20,7 @@ Here are some ImageNet results:
 
 **But when I trained and tested this model with 224x224 input image, I could not get the good results like the above table.**
 
-**I got 75.xx% accracy on Imagenet dataset for validation.**
+**I got 75.xx% accuracy on Imagenet dataset for validation.**
 
 [Pretrained model_weight_download](https://drive.google.com/open?id=1keZwVIfcWmxfTiswzOKUwkUz2xjvTvfm)
 
@@ -63,11 +63,11 @@ densenet121 | 19.345 ms |  981 MiB
 ```
      model  |  inference | RAM
  -----------+------------+---------
-   resnet50 |  49.412 ms |
-  resnet101 |  74.925 ms |
-  resnet152 | 100.670 ms |
-densenet121 |  48.791 ms |
-  darknet53 |  69.895 ms |
+   resnet50 |  49.412 ms | 206 MiB
+  resnet101 |  74.925 ms | 279 MiB
+  resnet152 | 100.670 ms | 332 MiB
+densenet121 |  48.791 ms | 133 MiB
+  darknet53 |  69.895 ms | 289 MiB
 ```
 
 ## Reference
