@@ -41,27 +41,33 @@ python train.py --data [imagenet-folder with train and val folders] --gpu 0 -b 6
 ```
 
 ## Benchmark
-- Framework: PyTorch
-- GPU: GTX 1080 Ti 11GB
-- CPU: i7 6550 3.4 GHZ
-- RAM: 16 GB
+- Framework: PyTorch 1.6.0
+- GPU: NVIDIA Quadro RTX 5000 Mobile / Max-Q 16 GiB
+- CPU: Intel® Xeon(R) E-2276M CPU @ 2.80GHz × 12
+- RAM: 32 GiB
 - Batch Size: 1
 - Input Shape(CWH): 3 x 224 x 224 
 
 **On GPU**
 ```
-resnet101 : 0.034906 sec
-resnet152 : 0.055852 sec
-densenet121 : 0.041888 sec
-darknet53 : 0.017952 sec
+     model  | inference | VRAM
+ -----------+-----------+---------
+   resnet50 |  9.809 ms | 1081 MiB
+  resnet101 | 18.497 ms | 1135 MiB
+  resnet152 | 26.811 ms | 1207 MiB
+densenet121 | 19.345 ms |  981 MiB
+  darknet53 | 11.414 ms | 1001 MiB
 ```
 
 **On CPU**
 ```
-resnet101 : 0.675194 sec
-resnet152 : 0.949459 sec
-densenet121 : 0.649266 sec
-darknet53 : 0.405916 sec
+     model  |  inference | RAM
+ -----------+------------+---------
+   resnet50 |  49.412 ms |
+  resnet101 |  74.925 ms |
+  resnet152 | 100.670 ms |
+densenet121 |  48.791 ms |
+  darknet53 |  69.895 ms |
 ```
 
 ## Reference
